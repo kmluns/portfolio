@@ -7,6 +7,7 @@ import Portfolio from "../pages/portfolio/Portfolio";
 
 const AnimatedRoutes = ({ personalDetails }) => {
   const location = useLocation();
+  location.basename = process.env.PUBLIC_URL
 
   return (
     <Routes location={location} key={location.pathname}>
