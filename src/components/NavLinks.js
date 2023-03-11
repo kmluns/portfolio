@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import openMenu from "../images/open.svg";
 import closeMenu from "../images/close.svg";
+import logo from "../images/logo.jpg";
+import openMenu from "../images/open.svg";
 
 const NavLinks = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +16,12 @@ const NavLinks = () => {
           <img className="openMenu" src={openMenu} alt="Open" />
         )}
       </button>
+
+      <NavLink to="/">
+        <img className="logo" src={logo} alt="logo" />
+      </NavLink>
+
+
       <nav className={`links ${isMenuOpen ? "open" : "closed"}`}>
         <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
           Home
@@ -22,9 +29,9 @@ const NavLinks = () => {
         <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>
           About
         </NavLink>
-        <NavLink to="/portfolio" onClick={() => setIsMenuOpen(false)}>
+        {/* <NavLink to="/portfolio" onClick={() => setIsMenuOpen(false)}>
           Portfolio
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
           Contact
         </NavLink>
